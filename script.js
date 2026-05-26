@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // تفعيل AOS
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 50,
+        disable: 'mobile'
+    });
 
     // قائمة الموبايل
     const menuBtn = document.getElementById('mobile-menu');

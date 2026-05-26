@@ -304,3 +304,64 @@ body { background: var(--white); color: #444; overflow-x: hidden; }
 @media (max-width: 768px) {
     .process-grid { gap: 50px; }
 }
+
+
+
+/* 1. حل مشكلة العرض الكلي ومنع السكرول بالعرض */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* يمنع الحركة يميناً ويساراً نهائياً */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. ضمان أن الحشو (Padding) لا يزيد من عرض العناصر */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* 3. تظبيط العناوين الكبيرة في الموبايل (Hero Title) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem !important; /* تصغير الخط عشان ميزقش الشاشة لبره */
+        line-height: 1.4;
+        word-wrap: break-word; /* إجبار الكلمات الطويلة على النزول لسطر جديد */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+        padding: 0 10px;
+    }
+
+    /* 4. تظبيط سكشن الخدمات عشان ميبقاش مقصوص */
+    .section-header h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr !important; /* كارت واحد فقط في الصف */
+        gap: 20px;
+        width: 100% !important;
+    }
+
+    .s-card {
+        margin: 0 10px; /* مسافة بسيطة من الجوانب */
+    }
+
+    /* 5. تظبيط الهيرو بالكامل */
+    .hero-content {
+        padding: 0 15px;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* 6. منع حركات AOS من تخريب العرض */
+[data-aos] {
+    pointer-events: none;
+}
+.aos-animate {
+    pointer-events: auto;
+}
