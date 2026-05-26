@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // تفعيل AOS
     AOS.init({
         duration: 1000,
         once: true,
         offset: 50,
-        // disable: 'mobile'
     });
 
     const menuBtn = document.getElementById('mobile-menu');
