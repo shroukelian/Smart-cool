@@ -4,10 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 1000,
         once: true,
         offset: 50,
-        disable: 'mobile'
+        // disable: 'mobile'
     });
 
-    // قائمة الموبايل
     const menuBtn = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('active');
     });
 
-    // إغلاق القائمة عند الضغط على رابط
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
